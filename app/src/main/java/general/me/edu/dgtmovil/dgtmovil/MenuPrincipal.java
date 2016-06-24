@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,7 +21,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import general.me.edu.dgtmovil.R;
 
 
-public class MenuPrincipal extends Activity {
+public class MenuPrincipal extends AppCompatActivity {
 
 
     ImageButton imagenNuevo;
@@ -37,12 +39,15 @@ public class MenuPrincipal extends Activity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_menu_principal);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("CGT");
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Bundle bundle = this.getIntent().getExtras();
         //Construimos el mensaje a mostrar

@@ -4,4 +4,6 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="tv_version_top_margin">10dp</dimen>
     <dimen name="treinta_dp">40dp</dimen>
+    <dimen name="quince_dp">15dp</dimen>
+    <dimen name="tamanio_txt">30dp</dimen>
 </resources>

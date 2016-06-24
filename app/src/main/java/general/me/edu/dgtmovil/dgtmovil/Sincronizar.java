@@ -16,18 +16,21 @@ import android.os.Environment;
 import android.app.Activity;
 import android.content.pm.ActivityInfo;
 import android.graphics.Region.Op;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 
-public class Sincronizar extends Activity {
+public class Sincronizar extends AppCompatActivity {
 
     Persistencia mypersistencia;
     GestionDatos gestionDatos;
@@ -44,10 +47,18 @@ public class Sincronizar extends Activity {
     String idPerfil="";
     String idEntidad="";
 
+    Toolbar toolbar;
+    ProgressBar mProgressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sincronizar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("CGT - Cargar Preguntas");
+        mProgressBar =(ProgressBar)findViewById(R.id.progressBar);
+        mProgressBar.setVisibility(View.GONE);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         bt_aceptar = (Button) this.findViewById(R.id.btnOK);
         resultado = (TextView) this.findViewById(R.id.textcodigo);
@@ -71,11 +82,12 @@ public class Sincronizar extends Activity {
             public void onClick(View v) {
                 mostrarMensaje("Iniciando Proceso", 3);
 
+                mProgressBar.setVisibility(View.VISIBLE);
                 if(existeConexion()){
                     mypersistencia = new Persistencia(getApplicationContext(),sentencias);
                     mypersistencia.idEntidad=idEntidad;
-
                     mypersistencia.execute("20");
+                    mProgressBar.setVisibility(View.VISIBLE);
                     try{
                         //  mypersistencia.wait();
 
@@ -91,6 +103,7 @@ public class Sincronizar extends Activity {
 
                     }
                     mostrarMensaje("Proceso Terminado", 3);
+                    mProgressBar.setVisibility(View.INVISIBLE);
                 }
 
 
@@ -124,7 +137,7 @@ public class Sincronizar extends Activity {
     }
 
     public void crearBaseDatos() {
-        sentencias = new Sentencias(this, "DBDGT", null, 1);
+        sentencias = new Sentencias(this, "DBDGT", null, 2);
 
     }
 

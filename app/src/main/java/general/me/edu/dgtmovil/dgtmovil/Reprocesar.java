@@ -4,11 +4,13 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -18,7 +20,7 @@ import general.me.edu.dgtmovil.datos.Sentencias;
 import general.me.edu.dgtmovil.objetos.Afiliado;
 import general.me.edu.dgtmovil.objetos.FormularioRespuesta;
 
-public class Reprocesar extends Activity {
+public class Reprocesar extends AppCompatActivity {
 
     Sentencias sentencias = null;
     String enviados = "0";
@@ -27,7 +29,7 @@ public class Reprocesar extends Activity {
     TextView txtmensajereproceso = null;
     TextView resultado = null;
     Button btnReprocesar = null;
-    ImageButton btnSalir = null;
+    ImageView btnSalir = null;
     ProgressBar barraprogreso=null;
     GestionDatos gestionDatos=null;
     Persistencia mypersistencia;
@@ -44,7 +46,7 @@ public class Reprocesar extends Activity {
         resultado = (TextView) findViewById(R.id.resultado);
 
         btnReprocesar = (Button) findViewById(R.id.buttonReprocesar);
-        btnSalir = (ImageButton) findViewById(R.id.imageButtonSalirReproceso);
+        btnSalir = (ImageView) findViewById(R.id.imageButtonSalirReproceso);
         barraprogreso = (ProgressBar)findViewById(R.id.progressBarAgentes);
 
         crearBaseDatos();

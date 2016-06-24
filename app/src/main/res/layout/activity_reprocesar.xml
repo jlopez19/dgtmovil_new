@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_reprocesar"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondo"
     android:layout_height="match_parent"
     tools:context="general.me.edu.dgtmovil.dgtmovil.Reprocesar">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+    </android.support.design.widget.AppBarLayout>
     <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/scroll"
@@ -17,7 +29,6 @@
             android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:layout_height="470dp"
-            android:background="@drawable/fondo"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingBottom="300dp"
@@ -117,14 +128,12 @@
                 android:layout_height="100dp"
                 android:layout_weight="0.15" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imageButtonSalirReproceso"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="15dp"
-                android:layout_gravity="right"
-                android:src="@drawable/f" />
-
+                android:layout_gravity="right"/>
 
 
             <TextView
@@ -133,15 +142,8 @@
                 android:paddingBottom="2dp"
                 android:text=" .." />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/f"
-                android:gravity="center"
-                android:text="CENSO Â© 2016-Todos los Derechos Reservados"
-                android:textColor="@android:color/white" />
         </LinearLayout>
 
     </ScrollView>
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

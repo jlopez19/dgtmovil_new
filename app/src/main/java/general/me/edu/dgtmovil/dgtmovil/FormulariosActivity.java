@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -17,7 +19,7 @@ import general.me.edu.dgtmovil.datos.GestionDatos;
 import general.me.edu.dgtmovil.datos.Sentencias;
 import general.me.edu.dgtmovil.objetos.Formulario;
 
-public class FormulariosActivity extends Activity {
+public class FormulariosActivity extends AppCompatActivity {
 
     String idUsuario;
     Sentencias sentencias;
@@ -31,10 +33,14 @@ public class FormulariosActivity extends Activity {
     AdaptadorFormulario adaptadorFormulario;
     TextView txtTerritorio;
     ArrayList<ItemFormulario> arregloFormularios;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formularios);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("CGT - Formularios");
         gestionDatos = new GestionDatos(getApplicationContext());
         crearBaseDatos();
 

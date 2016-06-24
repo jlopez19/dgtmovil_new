@@ -1,268 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_datos"
     android:layout_width="match_parent"
     android:background="@drawable/fondo"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="general.me.edu.dgtmovil.dgtmovil.DatosActivity">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"/>
+    </android.support.design.widget.AppBarLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.05"/>
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.7">
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:background="@android:color/white"
             android:gravity="center_vertical"
             android:layout_height="match_parent"
             >
 
+
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.1"
+                android:layout_marginTop="20dp"
                 android:gravity="center_horizontal"
                 >
-                <TextView
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.35"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.3"
                     android:layout_height="wrap_content"
-                    android:text="DATOS REGISTRO"
-                    android:layout_gravity="center_vertical"
-                    android:textStyle="bold"
-                    android:textSize="18sp"
-                    android:textColor="@android:color/white" />
+                    android:background="@drawable/ico_camara_azul"
+                    android:layout_gravity="center_vertical"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.35"
+                    android:layout_height="wrap_content"/>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.1"
-                android:gravity="center_horizontal"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_weight="0.1"
-                    android:layout_height="10dp"/>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="0.2"
+                android:layout_weight="0.25"
+                android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
                 >
                 <TextView
                     android:id="@+id/lp1"
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.4"
                     android:layout_height="match_parent"
                     android:text="..."
-                    android:layout_marginLeft="@dimen/treinta_dp"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/quince_dp"
                     android:layout_gravity="center"
                     android:gravity="center_vertical|bottom"
-                    android:textColor="@android:color/white"  />
-
-
+                    android:textColor="@android:color/darker_gray"  />
 
                 <EditText
                     android:id="@+id/p1"
                     android:layout_width="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.6"
                     android:inputType="text"
                     android:gravity="center_horizontal"
                     android:textColor="@android:color/darker_gray"
-                    android:layout_marginRight="@dimen/treinta_dp"
-                    android:layout_marginLeft="@dimen/treinta_dp"
-                    android:background="@drawable/textbox_form_activo"
-                    android:layout_height="40dp" />
+                    android:layout_marginRight="@dimen/quince_dp"
+                    android:layout_height="@dimen/tamanio_txt"
+                    android:background="@drawable/textbox_form_activo" />
 
-              </TableRow>
+            </TableRow>
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.2"
+                android:layout_weight="0.25"
+                android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
                 >
+
                 <TextView
                     android:id="@+id/lp2"
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.4"
                     android:layout_height="match_parent"
                     android:text="..."
-                    android:layout_marginLeft="@dimen/treinta_dp"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/quince_dp"
+                    android:layout_gravity="center"
                     android:gravity="center_vertical|bottom"
-                    android:textColor="@android:color/white" />
-
+                    android:textColor="@android:color/darker_gray" />
 
 
                 <EditText
                     android:id="@+id/p2"
                     android:layout_width="0dp"
-                    android:layout_marginLeft="@dimen/treinta_dp"
-                    android:layout_marginRight="@dimen/treinta_dp"
-                    android:layout_weight="0.7"
+                    android:layout_marginRight="@dimen/quince_dp"
+                    android:layout_weight="0.6"
                     android:gravity="center_horizontal"
                     android:textColor="@android:color/darker_gray"
                     android:inputType="text"
-                    android:layout_height="40dp"
+                    android:layout_height="@dimen/tamanio_txt"
                     android:background="@drawable/textbox_form_activo"/>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="0.2"
+                android:layout_weight="0.25"
+                android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
                 >
                 <TextView
                     android:id="@+id/lp3"
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.4"
                     android:layout_height="match_parent"
                     android:text="..."
-                    android:layout_marginLeft="@dimen/treinta_dp"
-                    android:gravity="center_vertical"
-                    android:textColor="@android:color/white" />
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/quince_dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|bottom"
+                    android:textColor="@android:color/darker_gray" />
 
 
                 <Spinner
                     android:id="@+id/p3"
                     android:layout_width="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.6"
                     android:background="@drawable/textbox_form_pasivo"
-                    android:layout_height="40dp"
                     android:gravity="center_horizontal"
-                    android:layout_marginRight="@dimen/treinta_dp"
-                    android:layout_marginLeft="@dimen/treinta_dp"
-                    android:focusableInTouchMode="true">
+                    android:focusableInTouchMode="true"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_marginRight="@dimen/quince_dp"
+                    android:layout_height="@dimen/tamanio_txt">
                 </Spinner>
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.2"
+                android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
                 >
                 <TextView
                     android:id="@+id/lp4"
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
-                    android:layout_marginLeft="@dimen/treinta_dp"
+                    android:layout_weight="0.4"
                     android:layout_height="match_parent"
                     android:text="..."
-                    android:gravity="center_vertical"
-                    android:textColor="@android:color/white" />
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/quince_dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|bottom"
+                    android:textColor="@android:color/darker_gray" />
 
                 <EditText
                     android:id="@+id/p4"
                     android:layout_width="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.6"
                     android:inputType="text"
-                    android:textColor="@android:color/darker_gray"
-                    android:layout_marginLeft="@dimen/treinta_dp"
-                    android:layout_marginRight="@dimen/treinta_dp"
                     android:gravity="center_horizontal"
                     android:background="@drawable/textbox_form_activo"
-                    android:layout_height="40dp"/>
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_marginRight="@dimen/quince_dp"
+                    android:layout_height="@dimen/tamanio_txt"/>
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.2"
+                android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
                 >
                 <TextView
                     android:id="@+id/lp5"
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
-                    android:layout_marginLeft="@dimen/treinta_dp"
+                    android:layout_weight="0.4"
                     android:layout_height="match_parent"
                     android:text="..."
-                    android:gravity="center_vertical"
-                    android:textColor="@android:color/white" />
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/quince_dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|bottom"
+                    android:textColor="@android:color/darker_gray" />
 
 
                 <EditText
                     android:id="@+id/p5"
                     android:layout_width="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.6"
                     android:inputType="text"
                     android:textColor="@android:color/darker_gray"
-                    android:layout_marginLeft="@dimen/treinta_dp"
-                    android:layout_marginRight="@dimen/treinta_dp"
+                    android:layout_marginRight="@dimen/quince_dp"
+                    android:layout_height="@dimen/tamanio_txt"
                     android:gravity="center_horizontal"
-                    android:background="@drawable/textbox_form_activo"
-                    android:layout_height="40dp"/>
+                    android:background="@drawable/textbox_form_activo"/>
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.2"
                 android:gravity="center_horizontal"
                 >
                 <TextView
                     android:id="@+id/lp6"
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
-                    android:layout_marginLeft="@dimen/treinta_dp"
+                    android:layout_weight="0.4"
                     android:layout_height="match_parent"
                     android:text="..."
-                    android:gravity="center_vertical"
-                    android:textColor="@android:color/white" />
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/quince_dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|bottom"
+                    android:textColor="@android:color/darker_gray"/>
 
 
                 <EditText
                     android:id="@+id/p6"
                     android:layout_width="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.6"
                     android:inputType="text"
                     android:textColor="@android:color/darker_gray"
-                    android:layout_marginLeft="@dimen/treinta_dp"
-                    android:layout_marginRight="@dimen/treinta_dp"
+                    android:layout_marginRight="@dimen/quince_dp"
+                    android:layout_height="@dimen/tamanio_txt"
                     android:gravity="center_horizontal"
-                    android:background="@drawable/textbox_form_activo"
-                    android:layout_height="40dp"/>
+                    android:background="@drawable/textbox_form_activo"/>
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.2"
+                android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
                 >
                 <TextView
                     android:id="@+id/lp7"
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.4"
                     android:layout_height="match_parent"
                     android:text="..."
-                    android:layout_marginLeft="@dimen/treinta_dp"
-                    android:gravity="center_vertical"
-                    android:textColor="@android:color/white" />
-
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/quince_dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|bottom"
+                    android:textColor="@android:color/darker_gray" />
 
 
                 <Spinner
                     android:id="@+id/p7"
                     android:layout_width="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.6"
                     android:background="@drawable/textbox_form_pasivo"
-                    android:layout_height="40dp"
                     android:gravity="center_horizontal"
-                    android:layout_marginRight="@dimen/treinta_dp"
-                    android:layout_marginLeft="@dimen/treinta_dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_marginRight="@dimen/quince_dp"
+                    android:layout_height="@dimen/tamanio_txt"
                     android:focusableInTouchMode="true">
                 </Spinner>
             </TableRow>
@@ -271,30 +286,32 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.2"
                 android:gravity="center_horizontal"
                 >
+
                 <TextView
                     android:id="@+id/lp8"
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.4"
                     android:layout_height="match_parent"
                     android:text="..."
-                    android:layout_marginLeft="@dimen/treinta_dp"
-                    android:gravity="center_vertical"
-                    android:textColor="@android:color/white" />
-
-
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/quince_dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|bottom"
+                    android:textColor="@android:color/darker_gray" />
 
                 <Spinner
                     android:id="@+id/p8"
                     android:layout_width="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.6"
                     android:background="@drawable/textbox_form_pasivo"
-                    android:layout_height="40dp"
                     android:gravity="center_horizontal"
-                    android:layout_marginRight="@dimen/treinta_dp"
-                    android:layout_marginLeft="@dimen/treinta_dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_marginRight="@dimen/quince_dp"
+                    android:layout_height="@dimen/tamanio_txt"
                     android:focusableInTouchMode="true">
                 </Spinner>
             </TableRow>
@@ -303,30 +320,33 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.2"
                 android:gravity="center_horizontal"
                 >
                 <TextView
                     android:id="@+id/lp9"
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
+                    android:layout_weight="0.4"
                     android:layout_height="match_parent"
                     android:text="..."
-                    android:layout_marginLeft="@dimen/treinta_dp"
-                    android:gravity="center_vertical"
-                    android:textColor="@android:color/white" />
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/quince_dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|bottom"
+                    android:textColor="@android:color/darker_gray" />
 
 
 
                 <Spinner
                     android:id="@+id/p9"
                     android:layout_width="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.6"
                     android:background="@drawable/textbox_form_pasivo"
-                    android:layout_height="40dp"
                     android:gravity="center_horizontal"
-                    android:layout_marginRight="@dimen/treinta_dp"
-                    android:layout_marginLeft="@dimen/treinta_dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_marginRight="@dimen/quince_dp"
+                    android:layout_height="@dimen/tamanio_txt"
                     android:focusableInTouchMode="true">
                 </Spinner>
             </TableRow>
@@ -337,59 +357,63 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.1"
+                android:layout_marginTop="5dp"
                 android:gravity="center_horizontal"
                 >
                 <TextView
                     android:id="@+id/lp10"
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
-                    android:layout_marginLeft="@dimen/treinta_dp"
+                    android:layout_weight="0.4"
                     android:layout_height="match_parent"
                     android:text="..."
-                    android:gravity="center_vertical"
-                    android:textColor="@android:color/white" />
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/quince_dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|bottom"
+                    android:textColor="@android:color/darker_gray" />
                 <EditText
                     android:id="@+id/p10"
                     android:layout_width="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.6"
                     android:inputType="text"
                     android:textColor="@android:color/darker_gray"
-                    android:layout_marginLeft="@dimen/treinta_dp"
-                    android:layout_marginRight="@dimen/treinta_dp"
+                    android:layout_marginRight="@dimen/quince_dp"
+                    android:layout_height="@dimen/tamanio_txt"
                     android:gravity="center_horizontal"
-                    android:background="@drawable/textbox_form_activo"
-                    android:layout_height="40dp"/>
+                    android:background="@drawable/textbox_form_activo"/>
             </TableRow>
 
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="0.2"
                 android:gravity="center_horizontal"
                 >
                 <TextView
                     android:id="@+id/lp11"
                     android:layout_width="0dp"
-                    android:layout_weight="0.3"
-                    android:layout_marginLeft="@dimen/treinta_dp"
+                    android:layout_weight="0.4"
                     android:layout_height="match_parent"
                     android:text="..."
-                    android:gravity="center_vertical"
-                    android:textColor="@android:color/white" />
+                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/quince_dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|bottom"
+                    android:textColor="@android:color/darker_gray"/>
 
 
                 <EditText
                     android:id="@+id/p11"
                     android:layout_width="0dp"
-                    android:layout_weight="0.7"
+                    android:layout_weight="0.6"
                     android:inputType="text"
                     android:textColor="@android:color/darker_gray"
-                    android:layout_marginLeft="@dimen/treinta_dp"
-                    android:layout_marginRight="@dimen/treinta_dp"
+                    android:layout_marginRight="@dimen/quince_dp"
+                    android:layout_height="@dimen/tamanio_txt"
                     android:gravity="center_horizontal"
-                    android:background="@drawable/textbox_form_activo"
-                    android:layout_height="40dp"/>
+                    android:background="@drawable/textbox_form_activo"/>
             </TableRow>
 
 
@@ -399,47 +423,47 @@
                 android:layout_weight="0.1"
                 android:gravity="center_horizontal"
                 >
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_weight="0.1"
-                    android:layout_height="10dp"/>
-            </TableRow>
-        </TableLayout>
-        </ScrollView>
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_height="0dp"
-            android:layout_weight="0.2">
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_weight="0.5"
-                android:gravity="center_vertical|bottom"
-                android:layout_height="0dp">
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="0.05"
+                    android:layout_weight="0.25"
                     android:layout_height="wrap_content"/>
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_weight="0.45"
-                    android:text="Agregar Foto"
-                    android:layout_height="50dp"
-                    android:background="@drawable/btn_formulario_x"/>
-
 
                 <Button
                     android:layout_width="0dp"
                     android:layout_weight="0.45"
                     android:id="@+id/leer_cedula"
-                    android:text="Leer cedula"
                     android:onClick="btnScan_click"
-                    android:layout_height="50dp"
-                    android:background="@drawable/btn_formulario_x"/>
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/btn_leercedula"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_weight="0.7"
+                android:layout_marginBottom="8dp"
+                android:layout_height="0dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.05"
+                    android:layout_height="wrap_content"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.45"
+                    android:layout_height="70dp"
+                    android:background="@drawable/contenedor_agregarfoto"/>
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.45"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="70dp"
+                    android:background="@drawable/ico_huella"/>
+
 
                 <TextView
                     android:layout_width="0dp"
@@ -448,38 +472,34 @@
             </TableRow>
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_weight="0.5"
+                android:layout_weight="1"
+                android:gravity="center_vertical|bottom"
                 android:layout_height="0dp">
-
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="0.05"
+                    android:layout_weight="0.25"
                     android:layout_height="wrap_content"/>
                 <Button
                     android:layout_width="0dp"
-                    android:layout_weight="0.45"
-                    android:text="Huella"
-                    android:layout_height="50dp"
-                    android:background="@drawable/btn_formulario_x"/>
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_weight="0.45"
-                    android:text="Guardar"
-                    android:layout_height="50dp"
-                    android:background="@drawable/btn_formulario_x"
-                    android:id="@+id/buttonGuardar" />
+                    android:layout_weight="0.5"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="3dp"
+                    android:id="@+id/buttonGuardar"
+                    android:background="@drawable/btn_guardar"/>
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="0.05"
+                    android:layout_weight="0.25"
                     android:layout_height="wrap_content"/>
             </TableRow>
         </TableLayout>
+        </ScrollView>
+
+
     </LinearLayout>
 
 
 
 
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

@@ -1,14 +1,13 @@
 package general.me.edu.dgtmovil.dgtmovil;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -16,15 +15,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.Parcelable.Creator;
-import android.support.annotation.Nullable;
-import com.microblink.results.barcode.BarcodeElement;
-import com.microblink.results.barcode.ElementType;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
+
 import com.microblink.activity.Pdf417ScanActivity;
 import com.microblink.recognizers.BaseRecognitionResult;
 import com.microblink.recognizers.RecognitionResults;
@@ -41,12 +32,9 @@ import com.microblink.recognizers.settings.RecognitionSettings;
 import com.microblink.recognizers.settings.RecognizerSettings;
 import com.microblink.results.barcode.BarcodeDetailedData;
 import com.microblink.results.barcode.BarcodeElement;
-import com.microblink.results.barcode.ElementType;
 import com.microblink.util.Log;
 import com.microblink.view.recognition.RecognizerView;
 
-
-import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
@@ -65,7 +53,7 @@ import general.me.edu.dgtmovil.objetos.Opcion;
 import general.me.edu.dgtmovil.objetos.Pregunta;
 import general.me.edu.dgtmovil.objetos.Respuesta;
 
-public class DatosActivity extends Activity {
+public class DatosActivity extends AppCompatActivity {
 
 
     Pdf417ScanResult result;
@@ -73,6 +61,7 @@ public class DatosActivity extends Activity {
     Spinner p3,p7,p8,p9;
     TextView lp1,lp2 ,lp3,lp4 ,lp5,lp6 ,lp7,lp8 ,lp9,lp10 ,lp11;
     String []mostrar;
+    LectorCedulasDeco deco;
 
     Button bt_guardar;
     String codigoFormulario;
@@ -114,6 +103,7 @@ public class DatosActivity extends Activity {
     String fecha,hora;
     String lon,lat;
     Bundle savedInstanceState1;
+   Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,8 +111,11 @@ public class DatosActivity extends Activity {
         setContentView(R.layout.activity_datos);
        // TextView tvVersion = (TextView) findViewById(R.id.tvVersion);
         //tvVersion.setText(buildVersionString());
-
         savedInstanceState1=savedInstanceState;
+        deco = new LectorCedulasDeco();
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("CGT - Datos Registro");
         p1 = (EditText) findViewById(R.id.p1);
         p2 = (EditText) findViewById(R.id.p2);
         p4 = (EditText) findViewById(R.id.p4);
@@ -324,7 +317,7 @@ public class DatosActivity extends Activity {
     }
 
     public void crearBaseDatos() {
-        sentencias = new Sentencias(this, "DBDGT", null, 1);
+        sentencias = new Sentencias(this, "DBDGT", null, 2);
 
     }
 
@@ -641,10 +634,16 @@ public class DatosActivity extends Activity {
                             }
                             BarcodeElement[] dato = rawData.getElements();
                            // Toast.makeText(DatosActivity.this, "Datos: "+mostrar[5], Toast.LENGTH_LONG).show();
-
-                            p1.setText(obtenerApellido(rawData));
-                            p2.setText(obtenerNombre(rawData));
-                            p4.setText(obtenerDocumento(rawData, barcodeData));
+                            String[] datos = deco.decodificarCedula(rawData.toString());
+                            for(int i = 0; i < datos.length; i++){
+                                if(datos[i] == null){
+                                    datos[i] = " ";
+                                }
+                            }
+                            p1.setText(datos[1]+ " " + datos[2]);
+                            p2.setText(datos[3]+ " " + datos[4]);
+                            p4.setText(datos[0]);
+                            p5.setText(datos[5]);
                             sb.append("}\n\n\n");
                         }
                     }
