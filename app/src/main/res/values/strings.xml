@@ -3,4 +3,8 @@
 
     <string name="UseWith">Use with</string>
     <string name="StartScanning">Start scanning</string>
+    <string name="hello">Hello World, CaptureSignatureActivity!</string>
+
+    <string name="external_dir">GetSignature</string>
+    <string name="tipo_de_comunidad_a_la_que_pertenece_se_ale_con_una_x_la_opci_n_que_corresponda">Tipo de comunidad a la que pertenece: (señale con una X la opción que corresponda)</string>
 </resources>

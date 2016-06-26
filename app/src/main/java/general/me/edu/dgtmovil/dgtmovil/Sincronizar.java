@@ -83,6 +83,7 @@ public class Sincronizar extends AppCompatActivity {
                 mostrarMensaje("Iniciando Proceso", 3);
 
                 mProgressBar.setVisibility(View.VISIBLE);
+                mProgressBar.setVisibility(View.GONE);
                 if(existeConexion()){
                     mypersistencia = new Persistencia(getApplicationContext(),sentencias);
                     mypersistencia.idEntidad=idEntidad;

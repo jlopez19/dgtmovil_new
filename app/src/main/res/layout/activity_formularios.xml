@@ -46,7 +46,7 @@
         <ListView
             android:id="@+id/lst_formularios"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="536dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp" />
         </LinearLayout>

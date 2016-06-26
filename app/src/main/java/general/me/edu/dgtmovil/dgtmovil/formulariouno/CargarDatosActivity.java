@@ -21,8 +21,7 @@ public class CargarDatosActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
         tabLayout.addTab(tabLayout.newTab().setText("Formulario uno"));
-        tabLayout.addTab(tabLayout.newTab().setText("Formulario dos" +
-                ""));
+        tabLayout.addTab(tabLayout.newTab().setText("Formulario dos"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);

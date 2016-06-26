@@ -25,6 +25,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="general.me.edu.dgtmovil.dgtmovil.MenuPrincipal" />
         </activity>
+        <activity android:name=".dgtmovil.CaptureSignature" />
         <activity
             android:name=".dgtmovil.Reprocesar"
             android:parentActivityName=".dgtmovil.MenuPrincipal"

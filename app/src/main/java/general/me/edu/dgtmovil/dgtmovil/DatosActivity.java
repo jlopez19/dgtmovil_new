@@ -4,14 +4,21 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.graphics.drawable.DrawableWrapper;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,6 +42,7 @@ import com.microblink.results.barcode.BarcodeElement;
 import com.microblink.util.Log;
 import com.microblink.view.recognition.RecognizerView;
 
+import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
@@ -55,14 +63,14 @@ import general.me.edu.dgtmovil.objetos.Respuesta;
 
 public class DatosActivity extends AppCompatActivity {
 
-
+    public static final int SIGNATURE_ACTIVITY = 1;
     Pdf417ScanResult result;
     EditText p1, p2, p4,p5,p6,p10,p11;
     Spinner p3,p7,p8,p9;
     TextView lp1,lp2 ,lp3,lp4 ,lp5,lp6 ,lp7,lp8 ,lp9,lp10 ,lp11;
     String []mostrar;
     LectorCedulasDeco deco;
-
+    ImageView firma;
     Button bt_guardar;
     String codigoFormulario;
 
@@ -105,6 +113,7 @@ public class DatosActivity extends AppCompatActivity {
     Bundle savedInstanceState1;
    Toolbar toolbar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,6 +123,7 @@ public class DatosActivity extends AppCompatActivity {
         savedInstanceState1=savedInstanceState;
         deco = new LectorCedulasDeco();
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        firma=(ImageView) findViewById(R.id.img_firma);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("CGT - Datos Registro");
         p1 = (EditText) findViewById(R.id.p1);
@@ -146,6 +156,9 @@ public class DatosActivity extends AppCompatActivity {
         Bundle bundle = this.getIntent().getExtras();
         //Construimos el mensaje a mostrar
 
+        //CODIGO PARA LA FOTO
+
+
         idUsuario=bundle.getInt("idUsuario");
         idPerfil=bundle.getString("perfil");
         idEntidad=bundle.getString("idEntidad");
@@ -154,7 +167,12 @@ public class DatosActivity extends AppCompatActivity {
         crearBaseDatos();
         gestionDatos.sentencias = sentencias;
 
-
+        firma.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Intent intent = new Intent(DatosActivity.this, CaptureSignature.class);
+                startActivityForResult(intent, SIGNATURE_ACTIVITY);
+            }
+        });
         preguntas=gestionDatos.listarPreguntas(idFormulario);
         opciones=gestionDatos.listarOpciones(idEntidad);
 
@@ -577,6 +595,29 @@ public class DatosActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == SIGNATURE_ACTIVITY && resultCode == RESULT_OK) {
+
+            Bitmap imagenFirma = null;
+            Bundle bundle = data.getExtras();
+            String status = bundle.getString("status");
+            if (status.equalsIgnoreCase("done")) {
+                String imagen = bundle.getString("imagen");
+                try {
+                    imagenFirma = BitmapFactory.decodeStream(DatosActivity.this.openFileInput(imagen));
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+               // firma.setImageBitmap(imagenFirma);
+                Drawable dra= new BitmapDrawable(getResources(), imagenFirma);
+                firma.setBackground(dra);
+               // firma.setBackground(Drawable.createFromPath(String.valueOf(imagenFirma)));
+                Toast toast = Toast.makeText(this, "Signature capture successful!", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.TOP, 105, 50);
+                toast.show();
+            }
+        }
+
         if (requestCode == MY_REQUEST_CODE && resultCode == Pdf417ScanActivity.RESULT_OK) {
             // First, obtain recognition result
             RecognitionResults results = data.getParcelableExtra(Pdf417ScanActivity.EXTRAS_RECOGNITION_RESULTS);

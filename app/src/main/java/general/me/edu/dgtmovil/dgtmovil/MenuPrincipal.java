@@ -2,6 +2,8 @@ package general.me.edu.dgtmovil.dgtmovil;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.location.Location;
+import android.location.LocationListener;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -34,6 +36,10 @@ public class MenuPrincipal extends AppCompatActivity {
     String idEntidad = "";
     String nombre = "";
     TextView nombreEntidad;
+
+    public static String latitud;
+    public static String longitud;
+    public static String coordenadas;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -180,5 +186,46 @@ public class MenuPrincipal extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         AppIndex.AppIndexApi.end(client, getIndexApiAction());
         client.disconnect();
+    }
+    public class MiLocationListener implements LocationListener
+
+    {
+
+        public void onLocationChanged(Location loc)
+
+        {
+            longitud = loc.getLongitude() + "";
+            latitud = loc.getLatitude() + "";
+
+            //	String coordenadas = loc.getLatitude()  + loc.getLongitude();
+            if (latitud.length() > 5) {
+                coordenadas = latitud;
+                setTitle("CGT GPS: OK");
+                //setTitle("Menu "+coordenadas);
+            } else {
+                latitud = "";
+                longitud = "";
+                coordenadas = "No hay señal de Gps";
+                //setTitle("Menu - No hay señal de Gps");
+            }
+            //Toast.makeText(getApplicationContext(), coordenadas,
+            //	Toast.LENGTH_LONG).show();
+
+            // fijarTitulo();
+        }
+
+        public void onProviderDisabled(String provider) {
+            Toast.makeText(getApplicationContext(), "Gps Desactivado",
+                    Toast.LENGTH_SHORT).show();
+        }
+
+        public void onProviderEnabled(String provider) {
+            Toast.makeText(getApplicationContext(), "Gps Activo",
+                    Toast.LENGTH_SHORT).show();
+        }
+
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+        }
+
     }
 }

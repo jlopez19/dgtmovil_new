@@ -7,4 +7,5 @@
     <color name="text_selected">#00C0DA</color>
     <color name="text_un_selected">#FFFFFFFF</color>
     <color name="colorBackGround">#104d8f</color>
+    <color name="text_color">#424242</color>
 </resources>

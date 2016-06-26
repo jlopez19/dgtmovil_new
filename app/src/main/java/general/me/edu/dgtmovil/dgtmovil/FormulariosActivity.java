@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import general.me.edu.dgtmovil.R;
 import general.me.edu.dgtmovil.datos.GestionDatos;
 import general.me.edu.dgtmovil.datos.Sentencias;
+import general.me.edu.dgtmovil.dgtmovil.formulariouno.CargarDatosActivity;
 import general.me.edu.dgtmovil.objetos.Formulario;
 
 public class FormulariosActivity extends AppCompatActivity {
@@ -94,4 +95,5 @@ public class FormulariosActivity extends AppCompatActivity {
         sentencias = new Sentencias(this, "DBDGT", null, 2);
 
     }
+
 }

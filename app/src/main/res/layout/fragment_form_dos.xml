@@ -4,10 +4,546 @@
     android:layout_height="match_parent"
     tools:context="general.me.edu.dgtmovil.dgtmovil.formulariouno.FormDosFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="        " />
+        android:orientation="vertical">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.7">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                >
+                <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                >
+                <TextView
+                    android:id="@+id/tv_declaracion"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.4"
+                    android:layout_height="match_parent"
+                    android:text="3. Declaración de aceptación de condiciones"
+                    android:textSize="18sp"
+                    android:textColor="@color/text_color"
+                    android:layout_marginLeft="@dimen/quince_dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|bottom" />
 
+            </TableRow>
+
+                <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                >
+                <TextView
+                    android:id="@+id/lp16"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.4"
+                    android:layout_height="match_parent"
+                    android:text="Nombres y apellidos declarante"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="@dimen/quince_dp"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical|bottom"
+                    android:textColor="@android:color/darker_gray" />
+
+
+                <EditText
+                    android:id="@+id/p16"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.6"
+                    android:inputType="text"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_marginRight="@dimen/quince_dp"
+                    android:layout_height="@dimen/tamanio_txt"
+                    android:gravity="center_horizontal"
+                    android:background="@drawable/textbox_form_activo"/>
+            </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center_horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/lp17"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="No. Documento"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray"/>
+
+
+                    <EditText
+                        android:id="@+id/p17"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:inputType="number"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_height="@dimen/tamanio_txt"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/textbox_form_activo"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/lp18"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="Ciudad Expedicion"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray"  />
+
+                    <Spinner
+                        android:id="@+id/p18"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:gravity="center_horizontal"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_height="@dimen/tamanio_txt" />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/lp19"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="Vereda recidencia"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray" />
+
+
+                    <Spinner
+                        android:id="@+id/p19"
+                        android:layout_width="0dp"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_weight="0.6"
+                        android:gravity="center_horizontal"
+                        android:inputType="text"
+                        android:layout_height="@dimen/tamanio_txt"/>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    >
+                    <TextView
+                        android:id="@+id/lp20"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="Municipio"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray" />
+
+
+                    <Spinner
+                        android:id="@+id/p20"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:inputType="text"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/textbox_form_activo"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_height="@dimen/tamanio_txt"/>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    >
+                    <TextView
+                        android:id="@+id/lp21"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="Departamento"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray" />
+
+
+                    <Spinner
+                        android:id="@+id/p21"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:inputType="text"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/textbox_form_activo"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_height="@dimen/tamanio_txt"/>
+                </TableRow>
+
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/lp22"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="Trabajo vereda focalizada"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray"  />
+
+                    <Spinner
+                        android:id="@+id/p22"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:inputType="text"
+                        android:gravity="center_horizontal"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_height="@dimen/tamanio_txt"
+                        android:background="@drawable/textbox_form_activo" />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/lp23"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="Demuestro la relacion que tengo con el predio"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray" />
+
+
+                    <Spinner
+                        android:id="@+id/p23"
+                        android:layout_width="0dp"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_weight="0.6"
+                        android:gravity="center_horizontal"
+                        android:textColor="@android:color/darker_gray"
+                        android:inputType="text"
+                        android:layout_height="@dimen/tamanio_txt"
+                        android:background="@drawable/textbox_form_activo"/>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/lp24"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="Derivo mis ingresos de actividades agrícolas, pecuarias y/o forestales"
+                        android:textSize="12sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray" />
+
+
+                    <Spinner
+                        android:id="@+id/p24"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:inputType="text"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/textbox_form_activo"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_height="@dimen/tamanio_txt"/>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    >
+                    <TextView
+                        android:id="@+id/lp25"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="Soy pensionado"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray" />
+
+
+                    <Spinner
+                        android:id="@+id/p25"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:inputType="text"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/textbox_form_activo"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_height="@dimen/tamanio_txt"/>
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/lp26"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="Desempeño cargos de elcción popular"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray"  />
+
+                    <Spinner
+                        android:id="@+id/p26"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:inputType="text"
+                        android:gravity="center_horizontal"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_height="@dimen/tamanio_txt"
+                        android:background="@drawable/textbox_form_activo" />
+
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/lp27"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="Soy empleado o contratista del Gobierno Nacional, Departamental o Mpal."
+                        android:textSize="14sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray"  />
+
+                    <Spinner
+                        android:id="@+id/p27"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:inputType="text"
+                        android:gravity="center_horizontal"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_height="@dimen/tamanio_txt"
+                        android:background="@drawable/textbox_form_activo" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    >
+                    <TextView
+                        android:id="@+id/lp28"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="Tengo vínculo laboral formal con agente privado y percibo salario"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray" />
+
+
+                    <Spinner
+                        android:id="@+id/p28"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:inputType="text"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/textbox_form_activo"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_height="@dimen/tamanio_txt"/>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    >
+                    <TextView
+                        android:id="@+id/lp29"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="He sido beneficiario"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray" />
+
+
+                    <Spinner
+                        android:id="@+id/p29"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:inputType="text"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/textbox_form_activo"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_height="@dimen/tamanio_txt"/>
+                </TableRow>
+
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.2"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal"
+                    >
+
+                    <TextView
+                        android:id="@+id/lp30"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="match_parent"
+                        android:text="Fecha de declaración"
+                        android:textSize="14sp"
+                        android:layout_marginLeft="@dimen/quince_dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:textColor="@android:color/darker_gray"/>
+
+
+                    <EditText
+                        android:id="@+id/p30"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.6"
+                        android:inputType="text"
+                        android:hint="(dd/mm/aaaa)"
+                        android:textColor="@android:color/darker_gray"
+                        android:layout_marginRight="@dimen/quince_dp"
+                        android:layout_height="@dimen/tamanio_txt"
+                        android:gravity="center_horizontal"
+                        android:background="@drawable/textbox_form_activo"/>
+                </TableRow>
+                <TableRow
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical|bottom"
+                android:layout_height="0dp">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"/>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="40dp"
+                    android:layout_marginBottom="3dp"
+                    android:id="@+id/buttonGuardar"
+                    android:background="@drawable/btn_guardar"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="0.25"
+                    android:layout_height="wrap_content"/>
+            </TableRow>
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
 </FrameLayout>
